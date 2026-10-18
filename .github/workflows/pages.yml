@@ -17,8 +17,21 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # El entorno github-pages solo admite despliegues desde main y una release
+  # corre sobre su tag: se relanza este workflow sobre main.
+  redeploy-from-main:
+    if: github.event_name == 'release' && !github.event.release.prerelease && !github.event.release.draft
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Dispatch Pages on main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY" --ref main
+
   deploy:
-    if: github.event_name != 'release' || (!github.event.release.prerelease && !github.event.release.draft)
+    if: github.event_name != 'release'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
