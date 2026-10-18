@@ -19,3 +19,7 @@ La compatibilidad del televisor puede diferir de la del reproductor de escritori
 ## Limitaciones de descubrimiento
 
 El descubrimiento documentado trabaja con IPv4 y subredes /24. Una red de mayor tamaño no se explora completa. No se admite HTTPS con certificado autofirmado en ese flujo.
+
+## La comprobación de actualización falla
+
+Comprueba la conexión y abre Descargas en este sitio para consultar la publicación oficial. No instales un archivo cuya comprobación de integridad haya fallado; vuelve a descargarlo. Si el identificador o la firma de tu edición anterior son distintos, consulta la guía de instalación.

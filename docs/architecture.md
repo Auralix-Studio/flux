@@ -15,3 +15,7 @@ El navegador detecta candidatos de video y los comprueba al seleccionarlos. Las 
 ## Límites de red
 
 El descubrimiento de streams aplica controles de direcciones privadas. Esto no significa que el navegador integrado o una URL web seleccionada funcionen sin Internet. En Android TV, el receptor HTTP requiere la aplicación abierta.
+
+## Versiones y actualizaciones
+
+Cada publicación contiene paquetes versionados, sumas SHA-256 y un manifiesto version.json. El número de compilación determina si hay una actualización. Este sitio consulta la última release estable y, si la API no responde, puede usar el manifiesto de la publicación sincronizado con la web.
